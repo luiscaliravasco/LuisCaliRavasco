@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luis Cali Ravasco | Developer Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 25%, rgba(139, 92, 246, 0.22), transparent 28%),
+        radial-gradient(circle at 85% 20%, rgba(79, 70, 229, 0.2), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(30, 64, 175, 0.16), transparent 35%),
+        #020617;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* Top navigation similar to the sample layout */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(2, 6, 23, 0.82);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(196, 181, 253, 0.14);
+    }
+
+    .navbar {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: #c4b5fd;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      font-weight: 700;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #c4b5fd;
+    }
+
+    .nav-cv {
+      padding: 10px 18px;
+      border-radius: 999px;
+      color: #020617;
+      background: linear-gradient(135deg, #c4b5fd, #8b5cf6);
+      box-shadow: 0 10px 25px rgba(139, 92, 246, 0.25);
+    }
+
+    .nav-cv:hover {
+      color: #020617;
+      transform: translateY(-2px);
+    }
+
+    /* Hero section */
+    .hero {
+      min-height: calc(100vh - 74px);
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: 70px;
+      padding: 70px 0;
+    }
+
+    .hero-image-area {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 460px;
+    }
+
+    .profile-glow {
+      position: absolute;
+      width: 390px;
+      height: 390px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.5), rgba(30, 64, 175, 0.25));
+      filter: blur(4px);
+      box-shadow: 0 0 80px rgba(139, 92, 246, 0.4);
+      animation: glowPulse 4s ease-in-out infinite;
+    }
+
+    .profile-ring {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      border: 1px solid rgba(196, 181, 253, 0.28);
+      box-shadow: inset 0 0 45px rgba(139, 92, 246, 0.22);
+    }
+
+    .hero-profile-img {
+      width: 360px;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 50%;
+      position: relative;
+      z-index: 2;
+      border: 5px solid rgba(196, 181, 253, 0.6);
+      box-shadow: 0 25px 65px rgba(0, 0, 0, 0.5), 0 0 55px rgba(139, 92, 246, 0.35);
+      animation: floatProfile 3.8s ease-in-out infinite;
+      background: #111827;
+    }
+
+    .floating-shadow {
+      position: absolute;
+      bottom: 30px;
+      width: 265px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.45);
+      filter: blur(17px);
+      animation: shadowFloat 3.8s ease-in-out infinite;
+    }
+
+    .hero-text .intro {
+      font-size: 28px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1.05;
+      color: #ffffff;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .typing-line {
+      font-size: 28px;
+      font-weight: 800;
+      color: #e5e7eb;
+      margin-bottom: 20px;
+    }
+
+    .typing-line span {
+      color: #c4b5fd;
+    }
+
+    .hero-text p {
+      max-width: 640px;
+      color: #cbd5e1;
+      margin-bottom: 25px;
+      font-size: 16px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid rgba(196, 181, 253, 0.5);
+      color: #c4b5fd;
+      font-weight: 800;
+      background: rgba(15, 23, 42, 0.55);
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      background: #c4b5fd;
+      color: #020617;
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(139, 92, 246, 0.28);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #c4b5fd, #8b5cf6);
+      color: #020617;
+      box-shadow: 0 12px 30px rgba(139, 92, 246, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(139, 92, 246, 0.38);
+    }
+
+    .btn-outline {
+      color: #c4b5fd;
+      border: 1px solid rgba(196, 181, 253, 0.6);
+      background: rgba(15, 23, 42, 0.4);
+    }
+
+    .btn-outline:hover {
+      background: #c4b5fd;
+      color: #020617;
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    #education {
+      padding-bottom: 35px;
+    }
+
+    #experience {
+      padding-top: 35px;
+    }
+
+    .section-header {
+      margin-bottom: 35px;
+    }
+
+    .section-title {
+      font-size: 34px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .section-title span {
+      color: #c4b5fd;
+    }
+
+    .section-subtitle {
+      color: #94a3b8;
+      max-width: 760px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.74);
+      border: 1px solid rgba(196, 181, 253, 0.14);
+      padding: 26px;
+      border-radius: 22px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.28);
+      transition: 0.3s;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(196, 181, 253, 0.5);
+      box-shadow: 0 20px 55px rgba(139, 92, 246, 0.13);
+    }
+
+    .card h3 {
+      color: #ffffff;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .skill-icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      font-size: 25px;
+      background: rgba(139, 92, 246, 0.14);
+      border: 1px solid rgba(196, 181, 253, 0.25);
+      box-shadow: 0 10px 25px rgba(139, 92, 246, 0.12);
+    }
+
+    .card p, .card li {
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+
+    .date {
+      display: inline-block;
+      color: #c4b5fd;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      margin-bottom: 9px;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "•";
+      color: #c4b5fd;
+      position: absolute;
+      left: 0;
+    }
+
+    .about-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.16), rgba(30, 64, 175, 0.08));
+      border-color: rgba(196, 181, 253, 0.22);
+    }
+
+    .timeline-card {
+      border-left: 4px solid #8b5cf6;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .logo-heading {
+      display: grid;
+      grid-template-columns: 68px 1fr;
+      align-items: center;
+      gap: 16px;
+      margin: 8px 0 12px;
+      min-height: 68px;
+    }
+
+    .logo-heading img {
+      width: 64px;
+      height: 64px;
+      min-width: 64px;
+      max-width: 64px;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 16px;
+      background: #ffffff;
+      padding: 9px;
+      border: 1px solid rgba(196, 181, 253, 0.18);
+      box-shadow: 0 8px 22px rgba(139, 92, 246, 0.12);
+      display: block;
+    }
+
+    .logo-heading h3 {
+      margin-bottom: 0;
+      line-height: 1.35;
+      font-size: 19px;
+    }
+
+    .timeline-card p {
+      margin-top: 2px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 245px;
+    }
+
+    .project-card h3 {
+      color: #c4b5fd;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .badge {
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(196, 181, 253, 0.24);
+      color: #ddd6fe;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .software-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      gap: 18px;
+    }
+
+    .software-card {
+      min-height: 145px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 12px;
+    }
+
+    .software-card img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      transition: 0.3s;
+    }
+
+    .software-card:hover img {
+      transform: scale(1.14) translateY(-3px);
+    }
+
+    .software-card h3 {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(30, 27, 75, 0.86));
+      border: 1px solid rgba(196, 181, 253, 0.24);
+      border-radius: 25px;
+      padding: 36px;
+      text-align: center;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+    }
+
+    .contact-box p {
+      color: #cbd5e1;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      color: #94a3b8;
+      border-top: 1px solid rgba(196, 181, 253, 0.14);
+    }
+
+    @keyframes floatProfile {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes shadowFloat {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.52;
+      }
+      50% {
+        transform: scale(0.82);
+        opacity: 0.28;
+      }
+    }
+
+    @keyframes glowPulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.9;
+      }
+      50% {
+        transform: scale(1.08);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 950px) {
+      .navbar {
+        height: auto;
+        padding: 18px 0;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 35px;
+        padding-top: 55px;
+      }
+
+      .hero-image-area {
+        order: -1;
+        min-height: 390px;
+      }
+
+      .profile-glow {
+        width: 320px;
+        height: 320px;
+      }
+
+      .profile-ring {
+        width: 345px;
+        height: 345px;
+      }
+
+      .hero-profile-img {
+        width: 300px;
+        height: 300px;
+      }
+
+      .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .socials, .hero-buttons {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .logo-heading {
+        grid-template-columns: 58px 1fr;
+        gap: 13px;
+        min-height: 58px;
+      }
+
+      .logo-heading img {
+        width: 54px;
+        height: 54px;
+        min-width: 54px;
+        max-width: 54px;
+      }
+
+      .logo-heading h3 {
+        font-size: 17px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(92%, 1120px);
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      .nav-cv {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-image-area {
+        min-height: 330px;
+      }
+
+      .profile-glow {
+        width: 260px;
+        height: 260px;
+      }
+
+      .profile-ring {
+        width: 285px;
+        height: 285px;
+      }
+
+      .hero-profile-img {
+        width: 245px;
+        height: 245px;
+      }
+
+      .hero-text .intro,
+      .typing-line {
+        font-size: 22px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container navbar">
+      <a href="#home" class="logo">Luis Cali <span>Ravasco</span></a>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#software">Software</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="Luis_Cali_Ravasco_CV.pdf" class="nav-cv" download>Download CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero" id="home">
+      <div class="hero-image-area">
+        <div class="profile-glow"></div>
+        <div class="profile-ring"></div>
+        <!-- Save your profile picture in the same folder as this file and name it profile.png -->
+        <img src="profile.png" alt="Luis Cali Ravasco Profile Picture" class="hero-profile-img" />
+        <div class="floating-shadow"></div>
+      </div>
+
+      <div class="hero-text">
+        <p class="intro">Hello, I am</p>
+        <h1>Luis Cali Ravasco</h1>
+        <p class="typing-line">And I'm a <span>Developer</span></p>
+        <p>
+          I create practical web, mobile, and software solutions focused on clean design, organized data, and user-friendly features. I enjoy solving problems, learning new technologies, and building systems that help people work faster and easier.
+        </p>
+
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/luis-cali-ravasco-96a08a408/" title="LinkedIn" target="_blank">in</a>
+          <a href="https://github.com/luiscaliravasco" title="GitHub" target="_blank">G</a>
+          <a href="https://www.facebook.com/cali.ravasco/" title="Facebook" target="_blank">f</a>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="about">
+      <div class="section-header">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <p class="section-subtitle">A quick introduction about my background and direction as a developer.</p>
+      </div>
+
+      <div class="card about-card">
+        <p>
+          I am a BSIT student and developer focused on building practical web and software solutions. My experience in customer service helped me develop strong communication, problem-solving, and analytical skills, while my academic and personal projects helped me improve in programming, database management, and system design.
+        </p>
+      </div>
+    </section>
+
+    <section class="container" id="skills">
+      <div class="section-header">
+        <h2 class="section-title">My <span>Skills</span></h2>
+        <p class="section-subtitle">Technologies, tools, and abilities I use for building applications and systems.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="skill-icon">💻</div>
+          <h3>Web Development</h3>
+          <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>PHP and MySQL</li>
+            <li>Responsive Web Design</li>
+            <li>Basic UI/UX Design</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="skill-icon">📱</div>
+          <h3>Mobile Development</h3>
+          <ul>
+            <li>Android Studio</li>
+            <li>Kotlin Basics</li>
+            <li>Jetpack Compose</li>
+            <li>Room Database Basics</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="skill-icon">🧠</div>
+          <h3>Programming</h3>
+          <ul>
+            <li>Python</li>
+            <li>PHP</li>
+            <li>Java / Kotlin Basics</li>
+            <li>Problem Solving</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="skill-icon">🗄️</div>
+          <h3>Database & Tools</h3>
+          <ul>
+            <li>MySQL / phpMyAdmin</li>
+            <li>Database Design</li>
+            <li>CRUD Operations</li>
+            <li>Visual Studio Code</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="skill-icon">💬</div>
+          <h3>Communication</h3>
+          <ul>
+            <li>Customer Service Communication</li>
+            <li>Active Listening</li>
+            <li>Clear Verbal Explanation</li>
+            <li>Professional Support Handling</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="skill-icon">👥</div>
+          <h3>Management</h3>
+          <ul>
+            <li>Team Support</li>
+            <li>Task Organization</li>
+            <li>Performance Monitoring</li>
+            <li>Problem Resolution</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="software">
+      <div class="section-header">
+        <h2 class="section-title">Software, Tools & <span>Languages</span></h2>
+        <p class="section-subtitle">Software, platforms, and programming languages I have used while working on projects and school activities.</p>
+      </div>
+
+      <div class="software-grid">
+        <div class="card software-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="Visual Studio Code Logo" />
+          <h3>Visual Studio Code</h3>
+        </div>
+
+        <div class="card software-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg" alt="Android Studio Logo" />
+          <h3>Android Studio</h3>
+        </div>
+
+        <div class="card software-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub Logo" />
+          <h3>GitHub</h3>
+        </div>
+
+        <div class="card software-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML Logo" />
+          <h3>HTML</h3>
+        </div>
+
+        <div class="card software-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS Logo" />
+          <h3>CSS</h3>
+        </div>
+
+        <div class="card software-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript Logo" />
+          <h3>JavaScript</h3>
+        </div>
+
+        <div class="card software-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python Logo" />
+          <h3>Python</h3>
+        </div>
+
+        <div class="card software-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" alt="Kotlin Logo" />
+          <h3>Kotlin</h3>
+        </div>
+
+        <div class="card software-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java Logo" />
+          <h3>Java</h3>
+        </div>
+
+        <div class="card software-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL Logo" />
+          <h3>MySQL</h3>
+        </div>
+
+        <div class="card software-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP Logo" />
+          <h3>PHP</h3>
+        </div>
+
+        <div class="card software-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma Logo" />
+          <h3>Figma</h3>
+        </div>
+
+        <div class="card software-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="Canva Logo" />
+          <h3>Canva</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="education">
+      <div class="section-header">
+        <h2 class="section-title">Educational <span>Attainment</span></h2>
+        <p class="section-subtitle">My academic background and current studies.</p>
+      </div>
+
+      <div class="grid education-grid">
+        <div class="card timeline-card">
+          <span class="date">2023 - Present</span>
+          <div class="logo-heading">
+            <img src="logos/sti.png" alt="STI College Logo" />
+            <h3>STI College</h3>
+          </div>
+          <p>Bachelor of Science in Information Technology (BSIT)</p>
+        </div>
+
+        <div class="card timeline-card">
+          <span class="date">Undergraduate</span>
+          <div class="logo-heading">
+            <img src="logos/patts.png" alt="PATTS Logo" />
+            <h3>Philippine Air Transport and Training Services (PATTS)</h3>
+          </div>
+          <p>Pre-Engineering</p>
+        </div>
+
+        <div class="card timeline-card">
+          <span class="date">Completed 05/2018</span>
+          <div class="logo-heading">
+            <img src="logos/sanbeda.png" alt="San Beda College Alabang Logo" />
+            <h3>San Beda College Alabang</h3>
+          </div>
+          <p>Senior High School Diploma</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="experience">
+      <div class="section-header">
+        <h2 class="section-title">Work <span>Experience</span></h2>
+        <p class="section-subtitle">My professional experience and the skills I developed from each role.</p>
+      </div>
+
+      <div class="grid experience-grid">
+        <div class="card timeline-card">
+          <span class="date">August 2025 - Present</span>
+          <div class="logo-heading">
+            <img src="logos/cognizant.png" alt="Cognizant Logo" />
+            <h3>Cognizant</h3>
+          </div>
+          <p><strong>Senior Policy Executive | Customer Service Representative</strong></p>
+          <ul>
+            <li>Supports a US retirement account as a customer service representative.</li>
+            <li>Assists customers with retirement account questions, account information, and service concerns.</li>
+          </ul>
+        </div>
+
+        <div class="card timeline-card">
+          <span class="date">June 2022 - 2025</span>
+          <div class="logo-heading">
+            <img src="logos/r1rcm.png" alt="R1 RCM Logo" />
+            <h3>R1 RCM</h3>
+          </div>
+          <p><strong>Lead Associate | Customer Service Representative</strong></p>
+          <ul>
+            <li>Handled calls to help answer patient queries.</li>
+            <li>Oversaw team member performance while helping patients receive quality service and support.</li>
+          </ul>
+        </div>
+
+        <div class="card timeline-card">
+          <span class="date">September 2019 - June 2021</span>
+          <div class="logo-heading">
+            <img src="logos/genpact.png" alt="Genpact Logo" />
+            <h3>Genpact Services LLC</h3>
+          </div>
+          <p><strong>Process Associate</strong></p>
+          <ul>
+            <li>Provided solutions and follow-up support to resolve customer issues.</li>
+            <li>Guided card members through troubleshooting online banking concerns.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="projects">
+      <div class="section-header">
+        <h2 class="section-title">My <span>Projects</span></h2>
+        <p class="section-subtitle">Projects I have worked on for web, mobile, system design, and game development.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card project-card">
+          <div>
+            <div class="logo-heading">
+              <img src="logos/sipup.png" alt="SipUp Cafe POS Logo" />
+              <h3>SipUp Cafe POS</h3>
+            </div>
+            <p>A web-based point-of-sale system with inventory, sales, receipts, user roles, product management, and ingredient-based stock deduction.</p>
+          </div>
+          <div class="badge-row">
+            <span class="badge">PHP</span>
+            <span class="badge">MySQL</span>
+            <span class="badge">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <div>
+            <div class="logo-heading">
+              <img src="logos/gravefinder.png" alt="GraveFinder Logo" />
+              <h3>GraveFinder</h3>
+            </div>
+            <p>A proposed web-based cemetery grave location and information system with burial record search, admin management, and digital map features.</p>
+          </div>
+          <div class="badge-row">
+            <span class="badge">Web App</span>
+            <span class="badge">Mapping</span>
+            <span class="badge">Database</span>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <div>
+            <div class="logo-heading">
+              <img src="logos/retireview.png" alt="RetireView Logo" />
+              <h3>RetireView</h3>
+            </div>
+            <p>A retirement-focused Android application with savings tracking, investment options, calculator features, profile management, and local database storage.</p>
+          </div>
+          <div class="badge-row">
+            <span class="badge">Android</span>
+            <span class="badge">Kotlin</span>
+            <span class="badge">Room DB</span>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <div>
+            <div class="logo-heading">
+              <img src="logos/legends-of-gaia.png" alt="Legends of Gaia Logo" />
+              <h3>Legends of Gaia</h3>
+            </div>
+            <p>A 2D pixel-style game project built with Python and Pygame, including character selection, animations, enemy behavior, and gameplay mechanics.</p>
+          </div>
+          <div class="badge-row">
+            <span class="badge">Python</span>
+            <span class="badge">Pygame</span>
+            <span class="badge">Game Dev</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="contact">
+      <div class="section-header">
+        <h2 class="section-title">Contact <span>Me</span></h2>
+        <p class="section-subtitle">Feel free to reach out for projects, collaboration, or learning opportunities.</p>
+      </div>
+
+      <div class="contact-box">
+        <p><strong>Email:</strong> cali.ravasco@outlook.com</p>
+        <p><strong>Phone:</strong> 0976 327 1106</p>
+        <p><strong>Location:</strong> Las Piñas, Philippines</p>
+        <p>Available for projects, collaboration, and learning opportunities.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Luis Cali Ravasco. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
