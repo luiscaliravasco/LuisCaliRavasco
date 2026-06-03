@@ -25,7 +25,7 @@
         radial-gradient(circle at 50% 90%, rgba(30, 64, 175, 0.16), transparent 35%),
         #020617;
       color: #e5e7eb;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     a {
@@ -49,14 +49,14 @@
     }
 
     .navbar {
-      height: 74px;
+      height: 56px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .logo {
-      font-size: 25px;
+      font-size: 22px;
       font-weight: 800;
       letter-spacing: 1px;
       color: #ffffff;
@@ -69,13 +69,13 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 22px;
     }
 
     nav a {
       color: #cbd5e1;
       font-weight: 700;
-      font-size: 15px;
+      font-size: 14px;
       transition: 0.3s;
     }
 
@@ -84,7 +84,7 @@
     }
 
     .nav-cv {
-      padding: 10px 18px;
+      padding: 8px 15px;
       border-radius: 999px;
       color: #020617;
       background: linear-gradient(135deg, #c4b5fd, #8b5cf6);
@@ -98,12 +98,12 @@
 
     /* Hero section */
     .hero {
-      min-height: calc(100vh - 74px);
+      min-height: calc(92vh - 64px);
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: 0.85fr 1.15fr;
       align-items: center;
-      gap: 70px;
-      padding: 70px 0;
+      gap: 46px;
+      padding: 46px 0;
     }
 
     .hero-image-area {
@@ -111,13 +111,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 460px;
+      min-height: 330px;
     }
 
     .profile-glow {
       position: absolute;
-      width: 390px;
-      height: 390px;
+      width: 330px;
+      height: 330px;
       border-radius: 50%;
       background: linear-gradient(135deg, rgba(139, 92, 246, 0.5), rgba(30, 64, 175, 0.25));
       filter: blur(4px);
@@ -127,21 +127,21 @@
 
     .profile-ring {
       position: absolute;
-      width: 420px;
-      height: 420px;
+      width: 310px;
+      height: 310px;
       border-radius: 50%;
       border: 1px solid rgba(196, 181, 253, 0.28);
       box-shadow: inset 0 0 45px rgba(139, 92, 246, 0.22);
     }
 
     .hero-profile-img {
-      width: 360px;
-      height: 360px;
+      width: 310px;
+      height: 310px;
       object-fit: cover;
       border-radius: 50%;
       position: relative;
       z-index: 2;
-      border: 5px solid rgba(196, 181, 253, 0.6);
+      border: 4px solid rgba(196, 181, 253, 0.6);
       box-shadow: 0 25px 65px rgba(0, 0, 0, 0.5), 0 0 55px rgba(139, 92, 246, 0.35);
       animation: floatProfile 3.8s ease-in-out infinite;
       background: #111827;
@@ -149,9 +149,9 @@
 
     .floating-shadow {
       position: absolute;
-      bottom: 30px;
-      width: 265px;
-      height: 38px;
+      bottom: 24px;
+      width: 230px;
+      height: 30px;
       border-radius: 50%;
       background: rgba(0, 0, 0, 0.45);
       filter: blur(17px);
@@ -159,25 +159,25 @@
     }
 
     .hero-text .intro {
-      font-size: 28px;
+      font-size: 23px;
       font-weight: 800;
       color: #ffffff;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .hero-text h1 {
-      font-size: clamp(42px, 6vw, 68px);
+      font-size: clamp(36px, 5.2vw, 56px);
       line-height: 1.05;
       color: #ffffff;
       letter-spacing: 1px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .typing-line {
-      font-size: 28px;
+      font-size: 23px;
       font-weight: 800;
       color: #e5e7eb;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
 
     .typing-line span {
@@ -187,20 +187,73 @@
     .hero-text p {
       max-width: 640px;
       color: #cbd5e1;
-      margin-bottom: 25px;
-      font-size: 16px;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .hero-contact-card {
+      max-width: 650px;
+      margin: 0 0 16px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(196, 181, 253, 0.22);
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.24);
+    }
+
+    .hero-contact-card h2 {
+      font-size: 18px;
+      color: #ffffff;
+      margin-bottom: 3px;
+    }
+
+    .hero-contact-card h2 span {
+      color: #c4b5fd;
+    }
+
+    .hero-contact-card .contact-message {
+      color: #cbd5e1;
+      margin-bottom: 7px;
+      font-size: 14px;
+    }
+
+    .hero-contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .hero-contact-list a,
+    .hero-contact-list span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(196, 181, 253, 0.22);
+      color: #ddd6fe;
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+
+    .hero-contact-list a:hover {
+      background: #c4b5fd;
+      color: #020617;
+      transform: translateY(-2px);
+      transition: 0.3s;
     }
 
     .socials {
       display: flex;
-      gap: 14px;
-      margin-bottom: 28px;
+      gap: 11px;
+      margin-bottom: 20px;
       flex-wrap: wrap;
     }
 
     .socials a {
-      width: 42px;
-      height: 42px;
+      width: 38px;
+      height: 38px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -221,13 +274,13 @@
 
     .hero-buttons {
       display: flex;
-      gap: 14px;
+      gap: 11px;
       flex-wrap: wrap;
     }
 
     .btn {
       display: inline-block;
-      padding: 13px 24px;
+      padding: 11px 19px;
       border-radius: 999px;
       font-weight: 800;
       transition: 0.3s;
@@ -257,25 +310,25 @@
     }
 
     section {
-      padding: 70px 0;
+      padding: 46px 0;
     }
 
     #education {
-      padding-bottom: 35px;
+      padding-bottom: 24px;
     }
 
     #experience {
-      padding-top: 35px;
+      padding-top: 24px;
     }
 
     .section-header {
-      margin-bottom: 35px;
+      margin-bottom: 24px;
     }
 
     .section-title {
-      font-size: 34px;
+      font-size: 30px;
       color: #ffffff;
-      margin-bottom: 10px;
+      margin-bottom: 7px;
     }
 
     .section-title span {
@@ -290,15 +343,15 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      gap: 14px;
       align-items: stretch;
     }
 
     .card {
       background: rgba(15, 23, 42, 0.74);
       border: 1px solid rgba(196, 181, 253, 0.14);
-      padding: 26px;
-      border-radius: 22px;
+      padding: 20px;
+      border-radius: 18px;
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.28);
       transition: 0.3s;
       height: 100%;
@@ -312,19 +365,19 @@
 
     .card h3 {
       color: #ffffff;
-      margin-bottom: 10px;
-      font-size: 20px;
+      margin-bottom: 7px;
+      font-size: 18px;
     }
 
     .skill-icon {
-      width: 52px;
-      height: 52px;
+      width: 46px;
+      height: 46px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 16px;
-      margin-bottom: 16px;
-      font-size: 25px;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      font-size: 22px;
       background: rgba(139, 92, 246, 0.14);
       border: 1px solid rgba(196, 181, 253, 0.25);
       box-shadow: 0 10px 25px rgba(139, 92, 246, 0.12);
@@ -332,15 +385,15 @@
 
     .card p, .card li {
       color: #cbd5e1;
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .date {
       display: inline-block;
       color: #c4b5fd;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 800;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     ul {
@@ -348,8 +401,8 @@
     }
 
     ul li {
-      margin-bottom: 9px;
-      padding-left: 18px;
+      margin-bottom: 6px;
+      padding-left: 15px;
       position: relative;
     }
 
@@ -374,23 +427,23 @@
 
     .logo-heading {
       display: grid;
-      grid-template-columns: 68px 1fr;
+      grid-template-columns: 60px 1fr;
       align-items: center;
-      gap: 16px;
+      gap: 10px;
       margin: 8px 0 12px;
-      min-height: 68px;
+      min-height: 60px;
     }
 
     .logo-heading img {
-      width: 64px;
-      height: 64px;
-      min-width: 64px;
-      max-width: 64px;
+      width: 56px;
+      height: 56px;
+      min-width: 56px;
+      max-width: 56px;
       object-fit: contain;
       object-position: center;
-      border-radius: 16px;
+      border-radius: 14px;
       background: #ffffff;
-      padding: 9px;
+      padding: 7px;
       border: 1px solid rgba(196, 181, 253, 0.18);
       box-shadow: 0 8px 22px rgba(139, 92, 246, 0.12);
       display: block;
@@ -399,7 +452,7 @@
     .logo-heading h3 {
       margin-bottom: 0;
       line-height: 1.35;
-      font-size: 19px;
+      font-size: 17px;
     }
 
     .timeline-card p {
@@ -410,7 +463,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 245px;
+      min-height: 210px;
     }
 
     .project-card h3 {
@@ -420,39 +473,39 @@
     .badge-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
+      gap: 8px;
+      margin-top: 12px;
     }
 
     .badge {
-      padding: 7px 11px;
+      padding: 6px 9px;
       border-radius: 999px;
       background: rgba(139, 92, 246, 0.12);
       border: 1px solid rgba(196, 181, 253, 0.24);
       color: #ddd6fe;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
     }
 
     .software-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+      gap: 14px;
     }
 
     .software-card {
-      min-height: 145px;
+      min-height: 120px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .software-card img {
-      width: 54px;
-      height: 54px;
+      width: 46px;
+      height: 46px;
       object-fit: contain;
       transition: 0.3s;
     }
@@ -462,26 +515,12 @@
     }
 
     .software-card h3 {
-      font-size: 16px;
+      font-size: 14px;
       margin-bottom: 0;
     }
 
-    .contact-box {
-      background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(30, 27, 75, 0.86));
-      border: 1px solid rgba(196, 181, 253, 0.24);
-      border-radius: 25px;
-      padding: 36px;
-      text-align: center;
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
-    }
-
-    .contact-box p {
-      color: #cbd5e1;
-      margin-bottom: 10px;
-    }
-
     footer {
-      padding: 30px 0;
+      padding: 22px 0;
       text-align: center;
       color: #94a3b8;
       border-top: 1px solid rgba(196, 181, 253, 0.14);
@@ -523,13 +562,13 @@
         height: auto;
         padding: 18px 0;
         flex-direction: column;
-        gap: 14px;
+        gap: 11px;
       }
 
       nav {
         justify-content: center;
         flex-wrap: wrap;
-        gap: 16px;
+        gap: 10px;
       }
 
       .hero {
@@ -541,7 +580,7 @@
 
       .hero-image-area {
         order: -1;
-        min-height: 390px;
+        min-height: 330px;
       }
 
       .profile-glow {
@@ -564,6 +603,15 @@
         margin-right: auto;
       }
 
+      .hero-contact-card {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-contact-list {
+        justify-content: center;
+      }
+
       .socials, .hero-buttons {
         justify-content: center;
       }
@@ -577,10 +625,10 @@
       }
 
       .logo-heading img {
-        width: 54px;
-        height: 54px;
-        min-width: 54px;
-        max-width: 54px;
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        max-width: 46px;
       }
 
       .logo-heading h3 {
@@ -627,7 +675,7 @@
       }
 
       section {
-        padding: 65px 0;
+        padding: 45px 0;
       }
     }
   </style>
@@ -661,12 +709,22 @@
       </div>
 
       <div class="hero-text">
-        <p class="intro">Hello, I am</p>
+        <p class="intro">Aspiring Developer</p>
         <h1>Luis Cali Ravasco</h1>
-        <p class="typing-line">And I'm a <span>Developer</span></p>
+        <p class="typing-line">BSIT Student | <span>Web & Software Developer</span></p>
         <p>
-          I create practical web, mobile, and software solutions focused on clean design, organized data, and user-friendly features. I enjoy solving problems, learning new technologies, and building systems that help people work faster and easier.
+          I am an aspiring developer focused on building clean, organized, and user-friendly web and software solutions. My background in customer service and current Information Technology studies help me apply problem-solving, communication, and continuous learning in every project.
         </p>
+
+        <div class="hero-contact-card" id="contact">
+          <h2>Contact <span>Me</span></h2>
+          <p class="contact-message">For project inquiries, collaborations, or professional growth opportunities, please use the contact details below.</p>
+          <div class="hero-contact-list">
+            <a href="mailto:cali.ravasco@outlook.com">📧 cali.ravasco@outlook.com</a>
+            <a href="tel:+639763271106">📞 0976 327 1106</a>
+            <span>📍 Las Piñas, Philippines</span>
+          </div>
+        </div>
 
         <div class="socials">
           <a href="https://www.linkedin.com/in/luis-cali-ravasco-96a08a408/" title="LinkedIn" target="_blank">in</a>
@@ -996,19 +1054,6 @@
       </div>
     </section>
 
-    <section class="container" id="contact">
-      <div class="section-header">
-        <h2 class="section-title">Contact <span>Me</span></h2>
-        <p class="section-subtitle">Feel free to reach out for projects, collaboration, or learning opportunities.</p>
-      </div>
-
-      <div class="contact-box">
-        <p><strong>Email:</strong> cali.ravasco@outlook.com</p>
-        <p><strong>Phone:</strong> 0976 327 1106</p>
-        <p><strong>Location:</strong> Las Piñas, Philippines</p>
-        <p>Available for projects, collaboration, and learning opportunities.</p>
-      </div>
-    </section>
   </main>
 
   <footer>
